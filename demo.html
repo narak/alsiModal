@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>alsiModal Demo</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' href='alsi_modal.css'>
+	<style>
+	body {
+	  padding: 7%;
+	  margin: 0;
+	  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	  font-size: 14px;
+	  color: #2f2b2c;
+	  text-rendering: optimizeLegibility;
+	}
+	a {
+	  color: #00b7ff;
+	  text-decoration: none;
+	}
+	h1 {
+	  padding: 0;
+	  margin: 0;
+	  line-height: 1em;
+	  height: 24px;
+	  font-weight: 600;
+	}
+	#modal-dialog .content {
+	  box-shadow: 0 2px 4px #888;
+	  -moz-box-shadow: 0 2px 4px #888;
+	  -webkit-box-shadow: 0 2px 4px #888;
+	  border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  -webkit-border-radius: 2px;
+	  color: #000;
+	  background-color: #fff;
+	  padding: 20px;
+	  margin: 4px;
+	}
+	</style>
+	<script src="jquery.min.js"></script>
+	<script src="alsi_modal.js"></script>
+	<script>
+		$(function() {
+			$('#no-close-on-escape-link').click(function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				$('#no-close-on-escape').modal({closeOnEscape: false});
+			});
+			$('#all-close-link').click(function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				$('#all-close').modal();
+			});
+		});
+	</script>
+</head>
+<body>
+<header>
+	<h1>alsiModal Demo v0.1</h1>
+	<p>
+		<a href="#" id="no-close-on-escape-link">no-close-on-escape</a> |
+		<a href="#" id="all-close-link">all-close</a>
+	</p>
+</header>
+
+
+<div id="modal-dialog">
+	<div class="window" id="no-close-on-escape">
+		<div class="content">
+			<p>
+				This modal dialog will not close when you press escape.
+			</p>
+		</div>
+	</div>
+	<div class="window" id="all-close">
+		<div class="content">
+			<a href="#close" class="close" style="float: right;"><h2>X</h2></a>
+			<p>
+				This modal dialog excepts all closing mechanisms.
+			</p>
+		</div>
+	</div>
+	<div id="mask"></div>
+</div>
+
+</body>
+</html>

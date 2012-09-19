@@ -1,0 +1,50 @@
+/* modal dialog */
+.noscroll {
+  overflow: hidden;
+}
+#mask {
+  position: fixed;
+  z-index: 95;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+  overflow: hidden;
+  display: none;
+}
+
+#modal-dialog  {
+  position: absolute;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  display: none;
+}
+
+#modal-dialog .window {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  display: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+#modal-dialog .content {
+  box-shadow: 0 2px 4px #888;
+  -moz-box-shadow: 0 2px 4px #888;
+  -webkit-box-shadow: 0 2px 4px #888;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  overflow:hidden;
+  color: #000;
+  background-color: #fff;
+  padding: 20px;
+  margin: 4px;
+}
